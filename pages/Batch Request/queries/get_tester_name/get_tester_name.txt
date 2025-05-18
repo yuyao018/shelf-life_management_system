@@ -1,0 +1,2 @@
+SELECT * FROM tester
+WHERE test_id = '{{all_request_table.selectedRow.test_id}}';

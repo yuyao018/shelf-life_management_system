@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6829a14f0b957058348e8af4_f4e45497-f725-4b7d-8bf9-702aac1f67ea",
-  "id": "Batch Request_reject_request",
+  "gitSyncId": "6829a14f0b957058348e8af4_17d8f33d-09fd-459f-8080-1c5f5e41bdc3",
+  "id": "Batch Request_get_tester_name",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE batch\nSET approval_status = 'Rejected', status = 'Canceled', approved_by = '{{appsmith.store.name}}', updated_at = CURRENT_TIMESTAMP\nWHERE batch_id = '{{all_request_table.selectedRow.batch_id}}';",
+      "body": "SELECT * FROM tester\nWHERE test_id = '{{all_request_table.selectedRow.test_id}}';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "reject_request",
+    "executeOnLoad": true,
+    "name": "get_tester_name",
     "pageId": "Batch Request",
     "userSetOnLoad": false
   }
