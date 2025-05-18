@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS total
+FROM batch
+WHERE status = 'Completed';

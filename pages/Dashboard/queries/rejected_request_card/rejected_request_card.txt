@@ -1,0 +1,7 @@
+SELECT COUNT(*) AS total
+FROM batch
+WHERE approval_status = 'Rejected'
+AND (
+	'{{appsmith.store.user_role}}' = 'admin'
+	OR product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
+);
