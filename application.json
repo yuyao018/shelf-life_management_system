@@ -18,7 +18,7 @@
   "icon": "plant",
   "pages": [
     {
-      "id": "Page1",
+      "id": "Login",
       "isDefault": true
     }
   ],

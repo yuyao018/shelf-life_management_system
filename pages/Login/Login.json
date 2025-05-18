@@ -1,11 +1,12 @@
 {
   "gitSyncId": "68299e4a0b957058348e8aea_c8078152-a85a-4b08-83b5-66728e82cc34",
   "unpublishedPage": {
+    "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 5000,
+          "bottomRow": 470,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -26,7 +27,7 @@
         }
       }
     ],
-    "name": "Page1",
-    "slug": "page1"
+    "name": "Login",
+    "slug": "login"
   }
 }
