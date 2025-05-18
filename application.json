@@ -33,6 +33,10 @@
     {
       "id": "Batch Request",
       "isDefault": false
+    },
+    {
+      "id": "Dashboard",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
