@@ -1,0 +1,4 @@
+SELECT DATE(submission_date) AS batch_date, COUNT(batch_id) AS total_batches
+FROM batch
+GROUP BY batch_date
+ORDER BY batch_date ASC;

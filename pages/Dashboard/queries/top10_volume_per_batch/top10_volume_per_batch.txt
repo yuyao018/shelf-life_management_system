@@ -1,0 +1,5 @@
+SELECT batch_name, quantity, product_owner
+FROM batch
+WHERE product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
+ORDER BY submission_date DESC
+LIMIT 10;

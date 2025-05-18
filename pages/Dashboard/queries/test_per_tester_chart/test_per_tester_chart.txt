@@ -1,0 +1,9 @@
+SELECT 
+	t.tester_id,
+	COUNT(t.test_id) AS total_test,
+	a.name AS tester_name
+FROM tester t
+JOIN account a 
+    ON t.tester_id COLLATE utf8mb4_general_ci = a.user_id COLLATE utf8mb4_general_ci
+GROUP BY t.tester_id, tester_name
+ORDER BY tester_name ASC;
