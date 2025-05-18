@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 9,
+  "bottomRowBeforeCollapse": 9,
+  "boxShadow": "none",
+  "buttonColor": "#ef4444",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{appsmith.store.view_part == \"my_request\" && appsmith.store.user_role == \"owner\"}}",
+  "key": "auy6bx9f3r",
+  "leftColumn": 48,
+  "minWidth": 120,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onClick": "{{cancel_request.run().then(() => {\n  get_all_data_user.run();\n  edit_csv.run();\n});}}",
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
+  "parentColumnSpace": 6.430908203125,
+  "parentId": "3tugru7rv2",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "text": "Cancel Request",
+  "topRow": 5,
+  "topRowBeforeCollapse": 5,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "kowyh1ciz1",
+  "widgetName": "cancel_button"
+}

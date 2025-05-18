@@ -1,0 +1,62 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 74,
+  "bottomRowBeforeCollapse": 89,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{appsmith.store.user_role === \"owner\"}}",
+  "key": "0nxgyilyr1",
+  "leftColumn": 30,
+  "minWidth": 120,
+  "mobileBottomRow": 95,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 38,
+  "mobileTopRow": 91,
+  "needsErrorInfo": false,
+  "onClick": "{{submit_to_mysql.run().then(() => {\n  my_request.my_request_buttononClick();\n  refresh_table.submit_buttononClick();\n  input_csv.run();\n});}}",
+  "originalBottomRow": 74,
+  "originalTopRow": 70,
+  "parentColumnSpace": 13.609375,
+  "parentId": "n9myayjoxe",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 35,
+  "text": "Submit",
+  "topRow": 70,
+  "topRowBeforeCollapse": 85,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "b271t0jt4t",
+  "widgetName": "submit_button"
+}

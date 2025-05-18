@@ -20,6 +20,10 @@
     {
       "id": "Login",
       "isDefault": true
+    },
+    {
+      "id": "Batch Request",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
