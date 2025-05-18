@@ -1,0 +1,3 @@
+SELECT * FROM account 
+WHERE email = '{{EmailInput.text}}'
+AND password = '{{PasswordInput.text}}'
