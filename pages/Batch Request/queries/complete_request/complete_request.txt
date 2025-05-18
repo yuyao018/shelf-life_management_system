@@ -1,0 +1,3 @@
+UPDATE batch
+SET status = 'Completed', completion_date = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP
+WHERE approval_status = 'Approved' and batch_id = '{{all_request_table.selectedRow.batch_id}}';
