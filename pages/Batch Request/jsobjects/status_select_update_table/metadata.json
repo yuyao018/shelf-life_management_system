@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6829a14f0b957058348e8af4_8f6a82b6-35f0-4f50-93f0-1c9f4df7e17c",
+  "id": "Batch Request_status_select_update_table",
+  "unpublishedCollection": {
+    "name": "status_select_update_table",
+    "pageId": "Batch Request",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
