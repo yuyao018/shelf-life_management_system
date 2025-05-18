@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6829a14f0b957058348e8af4_fa98aa04-6d68-4e44-883b-d160b0f7711d",
+  "id": "Batch Request_approve_request_click",
+  "unpublishedCollection": {
+    "name": "approve_request_click",
+    "pageId": "Batch Request",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

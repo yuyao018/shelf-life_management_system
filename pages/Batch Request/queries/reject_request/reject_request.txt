@@ -1,0 +1,3 @@
+UPDATE batch
+SET approval_status = 'Rejected', status = 'Canceled', approved_by = '{{appsmith.store.name}}', updated_at = CURRENT_TIMESTAMP
+WHERE batch_id = '{{all_request_table.selectedRow.batch_id}}';
