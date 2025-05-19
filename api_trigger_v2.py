@@ -28,6 +28,9 @@ def handle_database_to_csv():
 def handle_edit_csv(batch_id):
     return execute_script(['python', 'edit_csv.py', str(batch_id), '--verbose'])
 
+def handle_email_reminder():
+    return execute_script(['python', 'email_reminder.py'])
+
 app = Flask(__name__)
 
 @app.route("/", methods=["POST"])
@@ -41,6 +44,8 @@ def run_script():
         return jsonify(*handle_database_to_csv())
     elif script_name == "edit_csv" and batch_id:
         return jsonify(*handle_edit_csv(batch_id))
-
+    elif script_name == "email_reminder":
+        return jsonify(*handle_email_reminder())
+    
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
