@@ -27,6 +27,7 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": true,
     "name": "top10_volume_per_batch",
     "pageId": "Dashboard",
     "userSetOnLoad": false

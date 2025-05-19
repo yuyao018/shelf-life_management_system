@@ -24,7 +24,7 @@
   "mobileRightColumn": 62,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{load_page.manage_batch_buttononClick();}}",
+  "onClick": "{{navigateTo('Batch Request', {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 13.921875,
   "parentId": "rgo3ord30z",
   "parentRowSpace": 10,

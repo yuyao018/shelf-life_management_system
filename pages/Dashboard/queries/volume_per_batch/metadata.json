@@ -23,6 +23,7 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
+    "executeOnLoad": true,
     "name": "volume_per_batch",
     "pageId": "Dashboard",
     "userSetOnLoad": false

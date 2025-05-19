@@ -23,6 +23,7 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
+    "executeOnLoad": true,
     "name": "pending_request_chart",
     "pageId": "Dashboard",
     "userSetOnLoad": false

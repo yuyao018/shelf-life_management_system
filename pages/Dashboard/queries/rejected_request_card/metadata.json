@@ -27,6 +27,7 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": true,
     "name": "rejected_request_card",
     "pageId": "Dashboard",
     "userSetOnLoad": false

@@ -23,6 +23,7 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
+    "executeOnLoad": true,
     "name": "test_per_tester_chart",
     "pageId": "Dashboard",
     "userSetOnLoad": false

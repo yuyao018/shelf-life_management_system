@@ -27,6 +27,7 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": true,
     "name": "test_queue_table",
     "pageId": "Dashboard",
     "userSetOnLoad": false

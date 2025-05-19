@@ -27,6 +27,7 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": true,
     "name": "canceled_request_card",
     "pageId": "Dashboard",
     "userSetOnLoad": false

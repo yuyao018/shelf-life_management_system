@@ -27,6 +27,7 @@
         "key": "body"
       }
     ],
+    "executeOnLoad": true,
     "name": "pending_request_table",
     "pageId": "Dashboard",
     "userSetOnLoad": false

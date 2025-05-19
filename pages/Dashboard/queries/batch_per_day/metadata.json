@@ -23,6 +23,7 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
+    "executeOnLoad": true,
     "name": "batch_per_day",
     "pageId": "Dashboard",
     "userSetOnLoad": false

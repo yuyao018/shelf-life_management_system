@@ -23,6 +23,7 @@
       "pluginId": "mysql-plugin"
     },
     "dynamicBindingPathList": [],
+    "executeOnLoad": true,
     "name": "maturity_tracking_table",
     "pageId": "Dashboard",
     "userSetOnLoad": false
