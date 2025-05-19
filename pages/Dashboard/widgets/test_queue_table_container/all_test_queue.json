@@ -34,17 +34,17 @@
   "columnOrder": [
     "test_id",
     "batch_name",
-    "quantity",
     "status",
-    "tester_id",
-    "tester_name"
+    "tester_name",
+    "quantity",
+    "tester_id"
   ],
-  "columnUpdatedAt": 1747401398045,
+  "columnUpdatedAt": 1747620827372,
   "columnWidthMap": {
-    "batch_name": 199,
+    "batch_name": 303,
     "quantity": 92,
     "status": 115,
-    "test_id": 244,
+    "test_id": 197,
     "tester_name": 126
   },
   "customIsLoading": false,
@@ -170,7 +170,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Volume",
       "notation": "standard",
       "originalId": "quantity",
