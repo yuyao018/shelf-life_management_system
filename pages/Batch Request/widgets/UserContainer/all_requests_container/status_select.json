@@ -61,7 +61,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 31,
   "serverSideFiltering": false,
-  "sourceData": "[\n  {\n    \"name\": \"None\",\n    \"code\": \"\"\n  },\n  {\n    \"name\": \"Pending\",\n    \"code\": \"Pending\"\n  },\n  {\n    \"name\": \"Completed\",\n    \"code\": \"Completed\"\n  },\n  {\n    \"name\": \"Canceled\",\n    \"code\": \"Canceled\"\n  }\n]",
+  "sourceData": "[\n  {\n    \"name\": \"None\",\n    \"code\": \"\"\n  },\n\t{\n    \"name\": \"Not Started\",\n    \"code\": \"Not Started\"\n  },\n  {\n    \"name\": \"Pending\",\n    \"code\": \"Pending\"\n  },\n  {\n    \"name\": \"Completed\",\n    \"code\": \"Completed\"\n  },\n  {\n    \"name\": \"Canceled\",\n    \"code\": \"Canceled\"\n  }\n]",
   "topRow": 0,
   "topRowBeforeCollapse": 0,
   "type": "SELECT_WIDGET",
