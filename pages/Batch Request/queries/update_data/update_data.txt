@@ -5,4 +5,6 @@ WHERE batch_id = '{{all_request_table.selectedRow.batch_id}}';
 INSERT INTO tester (test_id)
 SELECT test_id
 FROM batch
-WHERE test_id NOT IN (SELECT test_id FROM tester);
+WHERE test_id COLLATE utf8mb4_general_ci NOT IN (
+	SELECT test_id COLLATE utf8mb4_general_ci FROM tester
+);

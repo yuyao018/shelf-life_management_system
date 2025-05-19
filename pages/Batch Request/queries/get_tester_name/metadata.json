@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM tester\nWHERE test_id = '{{all_request_table.selectedRow.test_id}}';",
+      "body": "SELECT a.name\nFROM tester t\nJOIN account a ON t.tester_id = a.user_id\nWHERE t.test_id = '{{all_request_table.selectedRow.test_id}}';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

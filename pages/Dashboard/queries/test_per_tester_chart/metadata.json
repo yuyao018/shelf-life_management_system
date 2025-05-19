@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n\tt.tester_id,\n\tCOUNT(t.test_id) AS total_test,\n\ta.name AS tester_name\nFROM tester t\nJOIN account a \n    ON t.tester_id COLLATE utf8mb4_general_ci = a.user_id COLLATE utf8mb4_general_ci\nGROUP BY t.tester_id, tester_name\nORDER BY tester_name ASC;",
+      "body": "SELECT \n    a.user_id AS tester_id,\n    a.name AS tester_name,\n    COUNT(t.test_id) AS total_test\nFROM account a\nLEFT JOIN tester t \n    ON t.tester_id COLLATE utf8mb4_general_ci = a.user_id COLLATE utf8mb4_general_ci\nWHERE a.role = \"tester\"\nGROUP BY a.user_id, a.name\nORDER BY tester_name ASC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
