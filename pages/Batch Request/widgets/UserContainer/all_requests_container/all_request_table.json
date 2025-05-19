@@ -206,7 +206,11 @@
       "key": "primaryColumns.quantity.isCellVisible"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onRowSelected"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -229,6 +233,7 @@
   "mobileTopRow": 102,
   "multiRowSelection": false,
   "needsErrorInfo": false,
+  "onRowSelected": "{{get_tester_name.run()}}",
   "originalBottomRow": 95,
   "originalTopRow": 7,
   "parentColumnSpace": 13.921875,
