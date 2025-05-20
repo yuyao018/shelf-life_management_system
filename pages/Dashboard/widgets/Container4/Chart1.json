@@ -8,7 +8,7 @@
   "chartData": {
     "zm3ttdtxae": {
       "color": "#1d4ed8",
-      "data": "{{batch_per_day.data.map( p => ({x: p.batch_date, y: p.total_batches}))}}",
+      "data": "{{ \n  Select_timeline.selectedOptionValue === \"day\"\n  ? batch_per_day.data.map(row => ({\n      x: row.calendar_date,\n      y: row.total_batches\n    }))\n  : batch_per_month.data.map(row => ({\n      x: row.month,\n      y: row.total_batches\n    }))\n}}",
       "seriesName": ""
     }
   },

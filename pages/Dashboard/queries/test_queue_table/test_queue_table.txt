@@ -14,4 +14,9 @@ WHERE b.approval_status COLLATE utf8mb4_general_ci = 'Approved'
 AND (
     '{{select_status.selectedOptionValue}}' = 'None'
     OR b.status = '{{select_status.selectedOptionValue}}'
+)
+AND (
+    '{{appsmith.store.user_role}}' = 'admin'
+    OR '{{appsmith.store.user_role}}' = 'tester'
+    OR b.product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
 );

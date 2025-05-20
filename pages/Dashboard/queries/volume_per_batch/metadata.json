@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT batch_name, quantity \nFROM batch\nORDER BY submission_date DESC\nLIMIT 10;",
+      "body": "SELECT batch_name, quantity \nFROM batch\nWHERE (status = 'Not Started' OR status = 'Pending')\nAND (\n\t'{{appsmith.store.user_role}}' = 'admin'\n\tOR '{{appsmith.store.user_role}}' = 'tester'\n\tOR product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')\n)\nORDER BY submission_date DESC\nLIMIT 10;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,11 @@
       "name": "SE database",
       "pluginId": "mysql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "executeOnLoad": true,
     "name": "volume_per_batch",
     "pageId": "Dashboard",

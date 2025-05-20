@@ -1,4 +1,10 @@
 SELECT batch_name, quantity 
 FROM batch
+WHERE (status = 'Not Started' OR status = 'Pending')
+AND (
+	'{{appsmith.store.user_role}}' = 'admin'
+	OR '{{appsmith.store.user_role}}' = 'tester'
+	OR product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
+)
 ORDER BY submission_date DESC
 LIMIT 10;

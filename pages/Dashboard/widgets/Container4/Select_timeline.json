@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "day",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -28,10 +28,10 @@
   "key": "as3hitbwbj",
   "labelAlignment": "left",
   "labelPosition": "Left",
-  "labelText": "X-axis",
+  "labelText": "Timeline",
   "labelTextSize": "0.875rem",
   "labelWidth": "3",
-  "leftColumn": 50,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -50,12 +50,12 @@
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 10,
   "serverSideFiltering": false,
   "sourceData": "[\n  {\n    \"name\": \"day\",\n    \"code\": \"day\"\n  },\n  {\n    \"name\": \"month\",\n    \"code\": \"month\"\n  }\n]",
   "topRow": 0,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "1cj7s38fbd",
-  "widgetName": "Select1"
+  "widgetName": "Select_timeline"
 }
