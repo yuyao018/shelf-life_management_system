@@ -1,3 +1,8 @@
 SELECT COUNT(*) AS total
 FROM batch
-WHERE status = 'Completed';
+WHERE status = 'Completed'
+AND (
+	'{{appsmith.store.user_role}}' = 'admin'
+	OR '{{appsmith.store.user_role}}' = 'tester'
+	OR product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
+);

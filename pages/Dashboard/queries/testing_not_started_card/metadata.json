@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(*) AS total\nFROM batch\nWHERE status = 'Not Started';",
+      "body": "SELECT COUNT(*) AS total\nFROM batch\nWHERE status = 'Not Started'\nAND (\n\t'{{appsmith.store.user_role}}' = 'admin'\n\tOR '{{appsmith.store.user_role}}' = 'tester'\n\tOR product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,11 @@
       "name": "SE database",
       "pluginId": "mysql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "executeOnLoad": true,
     "name": "testing_not_started_card",
     "pageId": "Dashboard",

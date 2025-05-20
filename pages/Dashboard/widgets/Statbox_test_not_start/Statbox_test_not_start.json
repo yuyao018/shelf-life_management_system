@@ -56,22 +56,15 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "isVisible"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": "{{appsmith.store.user_role === \"admin\" || appsmith.store.user_role === \"tester\"}}",
+  "isVisible": true,
   "key": "fe4bdys95a",
   "leftColumn": 10,
   "maxDynamicHeight": 9000,
