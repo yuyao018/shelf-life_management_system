@@ -88,7 +88,7 @@ def write_batches_to_csv(csv_filename, all_batches, updated_batch_ids, conn, ver
     if os.path.exists(csv_filename):
         os.remove(csv_filename)
         if verbose:
-            print(f"🗑️ Deleted old CSV: {csv_filename}")
+            print(f"Deleted old CSV: {csv_filename}")
 
     with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = list(all_batches[0].keys())
@@ -101,10 +101,10 @@ def write_batches_to_csv(csv_filename, all_batches, updated_batch_ids, conn, ver
                 update_barcode_in_db(conn, batch['batch_id'], barcode_path)
                 batch['barcode'] = barcode_path
                 if verbose:
-                    print(f"🔄 Updated barcode for batch {batch['batch_id']}")
+                    print(f"Updated barcode for batch {batch['batch_id']}")
             writer.writerow(batch)
 
-    print(f"✅ Regenerated CSV: {csv_filename}")
+    print(f"Regenerated CSV: {csv_filename}")
 
 # === Main logic ===
 def main():
@@ -118,7 +118,7 @@ def main():
     batches = fetch_batches_by_ids(cursor, args.batch_ids)
 
     if not batches:
-        print("⚠️ No matching batches found.")
+        print("No matching batches found.")
         cursor.close()
         conn.close()
         exit(0)
