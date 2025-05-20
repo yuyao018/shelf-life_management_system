@@ -83,7 +83,7 @@
   "mobileRightColumn": 58,
   "mobileTopRow": 199,
   "needsErrorInfo": false,
-  "originalBottomRow": 201,
+  "originalBottomRow": 197,
   "originalTopRow": 163,
   "parentColumnSpace": 16.859375,
   "parentId": "0",
@@ -96,5 +96,5 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "mik4jibpn3",
-  "widgetName": "volume_per_batch_containerCopy"
+  "widgetName": "owner_batch_maturity_overview"
 }
