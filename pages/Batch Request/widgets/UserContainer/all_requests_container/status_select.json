@@ -12,6 +12,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -32,7 +35,7 @@
   "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
-  "isVisible": "true",
+  "isVisible": "{{appsmith.store.user_role === \"admin\" || appsmith.store.user_role === \"owner\"}}",
   "key": "me9du1sx51",
   "labelAlignment": "left",
   "labelPosition": "Top",

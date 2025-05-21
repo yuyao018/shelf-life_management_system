@@ -27,7 +27,7 @@
   "fontSize": "1.25rem",
   "fontStyle": "BOLD",
   "isLoading": false,
-  "isVisible": "{{(appsmith.store.user_role === \"admin\" && appsmith.store.view_part === \"all_request\") || (appsmith.store.user_role === \"tester\" && appsmith.store.view_part === \"all_request\")}}",
+  "isVisible": "{{(appsmith.store.user_role === \"admin\" && appsmith.store.view_part === \"all_request\")}}",
   "key": "8hjil7fwmt",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,

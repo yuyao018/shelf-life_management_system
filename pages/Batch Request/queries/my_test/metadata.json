@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6829a14f0b957058348e8af4_9f94efa4-baf0-4150-99d0-71283757a5e6",
-  "id": "Batch Request_assign_tester",
+  "gitSyncId": "6829a14f0b957058348e8af4_94e86049-28df-4f87-b17f-87e6735b3fbe",
+  "id": "Batch Request_my_test",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE batch\nSET status = 'Pending', updated_at = CURRENT_TIMESTAMP\nWHERE approval_status = 'Approved' and test_id = '{{awaiting_test_table.selectedRow.test_id}}';\n\nUPDATE tester\nSET tester_id = '{{appsmith.store.user_id}}', assigned_at = CURRENT_TIMESTAMP\nWHERE test_id = '{{awaiting_test_table.selectedRow.test_id}}';",
+      "body": "SELECT \n    batch.*, \n    tester.assigned_at\nFROM \n    batch\nJOIN \n    tester \n    ON batch.test_id COLLATE utf8mb4_general_ci = tester.test_id COLLATE utf8mb4_general_ci\nWHERE \n    batch.status COLLATE utf8mb4_general_ci IN ('Pending', 'Completed')\n    AND tester.tester_id = '{{appsmith.store.user_id}}';\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "assign_tester",
+    "executeOnLoad": true,
+    "name": "my_test",
     "pageId": "Batch Request",
     "userSetOnLoad": false
   }

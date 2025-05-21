@@ -1,0 +1,11 @@
+SELECT 
+    batch.*, 
+    tester.assigned_at
+FROM 
+    batch
+JOIN 
+    tester 
+    ON batch.test_id COLLATE utf8mb4_general_ci = tester.test_id COLLATE utf8mb4_general_ci
+WHERE 
+    batch.status COLLATE utf8mb4_general_ci IN ('Pending', 'Completed')
+    AND tester.tester_id = '{{appsmith.store.user_id}}';
