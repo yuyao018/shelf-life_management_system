@@ -1,6 +1,14 @@
+"""
+install the library (can run at terminal): pip install schedule
+
+"""
+
 from flask import Flask, request, jsonify
 import subprocess
 import sys
+import threading
+import schedule
+import time
 
 def execute_script(command):
     try:
@@ -46,6 +54,27 @@ def run_script():
         return jsonify(*handle_edit_csv(batch_id))
     elif script_name == "email_reminder":
         return jsonify(*handle_email_reminder())
-    
+
+# === Email Scheduler ===
+def trigger_email_reminder():
+    try:
+        result, status = handle_email_reminder()
+        print("Triggered email reminder:", result)
+    except Exception as e:
+        print("Failed to trigger email reminder:", e)
+
+def schedule_runner():
+    schedule.every().day.at("09:00").do(trigger_email_reminder)
+    print("Email scheduler started...")
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
+
+# === Start Flask and Scheduler Together ===
 if __name__ == "__main__":
+     # Start scheduler in a separate thread
+    scheduler_thread = threading.Thread(target=schedule_runner, daemon=True)
+    scheduler_thread.start()
+
+    # Start Flask API server
     app.run(host="0.0.0.0", port=5000)
