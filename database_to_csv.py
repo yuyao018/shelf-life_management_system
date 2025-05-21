@@ -96,9 +96,9 @@ def main():
         csv_filename = f'csv_reports/batch_report_{today}.csv'
         write_batches_to_csv(batches, csv_filename)
 
-        print(f"✅ CSV saved to: {csv_filename}")
-        print("✅ Barcode images saved in 'barcodes/'")
-        print("✅ Database updated with barcode image paths.")
+        print(f"CSV saved to: {csv_filename}")
+        print("Barcode images saved in 'barcodes/'")
+        print("Database updated with barcode image paths.")
 
     # === Clean up ===
     cursor.close()
