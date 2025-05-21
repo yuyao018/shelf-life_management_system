@@ -50,7 +50,7 @@
     "completion_date",
     "updated_at"
   ],
-  "columnUpdatedAt": 1747815737587,
+  "columnUpdatedAt": 1747817372233,
   "columnWidthMap": {
     "approval_status": 111,
     "batch_id": 301,
@@ -574,7 +574,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Volume",
       "notation": "standard",
       "originalId": "quantity",
@@ -712,7 +712,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Test ID",
       "notation": "standard",
       "originalId": "test_id",

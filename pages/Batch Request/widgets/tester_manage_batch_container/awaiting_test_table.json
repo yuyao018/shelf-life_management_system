@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "0px",
   "borderWidth": "1",
-  "bottomRow": 34,
+  "bottomRow": 33,
   "boxShadow": "none",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -115,6 +115,9 @@
     },
     {
       "key": "primaryColumns.test_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.maturity_date.outputFormat"
     }
   ],
   "dynamicPropertyPathList": [
@@ -129,6 +132,9 @@
     },
     {
       "key": "onRowSelected"
+    },
+    {
+      "key": "primaryColumns.maturity_date.outputFormat"
     }
   ],
   "dynamicTriggerPathList": [
@@ -374,7 +380,7 @@
       "label": "Maturity Date",
       "notation": "standard",
       "originalId": "maturity_date",
-      "outputFormat": "YYYY-MM-DD",
+      "outputFormat": "{{(() => { const tableData = awaiting_test_table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( moment.tz(currentRow[\"maturity_date\"], 'UTC').format('YYYY-MM-DD HH:mm:ss') )) :  moment.tz(currentRow[\"maturity_date\"], 'UTC').format('YYYY-MM-DD HH:mm:ss')  })()}}",
       "sticky": "",
       "textSize": "0.8rem",
       "thousandSeparator": true,

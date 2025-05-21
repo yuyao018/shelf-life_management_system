@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 73,
+  "bottomRow": 72,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -51,7 +51,7 @@
   "text": "{{ \n  awaiting_test_table.selectedRow && awaiting_test_table.selectedRow.test_id \n  ? awaiting_test_table.selectedRow.test_id \n  : my_assigned_test_table.selectedRow && my_assigned_test_table.selectedRow.test_id \n}}\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 68,
+  "topRow": 67,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
