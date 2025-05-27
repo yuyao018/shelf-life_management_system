@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6829a14f0b957058348e8af4_01b492f1-3bae-4e2c-a645-b72cb91d5291",
+  "id": "Manage User_click_save",
+  "unpublishedCollection": {
+    "name": "click_save",
+    "pageId": "Manage User",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

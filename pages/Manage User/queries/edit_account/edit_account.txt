@@ -1,0 +1,3 @@
+UPDATE account
+SET name = '{{edit_name.text}}', email = '{{edit_email.text}}', role = '{{edit_role.selectedOptionValue}}'
+WHERE user_id = '{{admin_table.selectedRow.user_id}}';

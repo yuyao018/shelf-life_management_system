@@ -37,6 +37,10 @@
     {
       "id": "Dashboard",
       "isDefault": false
+    },
+    {
+      "id": "Manage User",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {

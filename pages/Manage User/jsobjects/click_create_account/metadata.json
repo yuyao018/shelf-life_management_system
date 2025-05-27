@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6829a14f0b957058348e8af4_6df47ffc-7de3-46ea-a67d-d7eeb3a959c8",
+  "id": "Manage User_click_create_account",
+  "unpublishedCollection": {
+    "name": "click_create_account",
+    "pageId": "Manage User",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

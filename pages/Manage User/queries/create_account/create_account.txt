@@ -1,0 +1,2 @@
+INSERT INTO `account` (`name`, `email`, `password`, `role`) 
+VALUES ('{{nameInput.text}}', '{{emailInput.text}}', '{{passwordInput.text}}', {{roleSelect.selectedOptionValue}});
