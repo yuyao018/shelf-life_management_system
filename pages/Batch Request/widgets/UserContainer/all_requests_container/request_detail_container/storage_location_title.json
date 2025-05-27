@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 69,
+  "bottomRow": 70,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -48,7 +48,7 @@
   "text": "Part III: Storage Location",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 65,
+  "topRow": 66,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
