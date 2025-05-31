@@ -17,7 +17,7 @@
   "enableDownload": false,
   "enableRotation": false,
   "flexVerticalAlignment": "start",
-  "image": "{{barcode_for_tester.data}}",
+  "image": "{{\n(awaiting_test_table.selectedRowIndex >= 0 || my_assigned_test_table.selectedRowIndex >= 0)\n    ? barcode_for_tester.data\n    : \"https://assets.appsmith.com/widgets/default.png\"\n}}\n",
   "imageShape": "RECTANGLE",
   "isLoading": false,
   "isVisible": true,

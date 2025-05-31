@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 63,
+  "bottomRow": 62,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -35,8 +35,8 @@
   "mobileRightColumn": 48,
   "mobileTopRow": 187,
   "needsErrorInfo": false,
-  "originalBottomRow": 62,
-  "originalTopRow": 58,
+  "originalBottomRow": 63,
+  "originalTopRow": 59,
   "overflow": "NONE",
   "parentColumnSpace": 13.921875,
   "parentId": "4gj67751xt",
@@ -48,7 +48,7 @@
   "text": "Part III: Storage Location",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 59,
+  "topRow": 58,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

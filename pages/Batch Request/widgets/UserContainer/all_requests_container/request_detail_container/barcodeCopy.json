@@ -17,7 +17,7 @@
   "enableDownload": false,
   "enableRotation": false,
   "flexVerticalAlignment": "start",
-  "image": "{{get_barcode_image.data}}",
+  "image": "{{\nall_request_table.selectedRowIndex >= 0 \n    ? get_barcode_image.data\n    : \"https://assets.appsmith.com/widgets/default.png\"\n}}",
   "imageShape": "RECTANGLE",
   "isLoading": false,
   "isVisible": true,
