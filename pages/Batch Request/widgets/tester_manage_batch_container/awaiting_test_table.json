@@ -163,7 +163,7 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 3,
   "needsErrorInfo": false,
-  "onRowSelected": "{{\nbarcode_for_tester.run({ code: awaiting_test_table.selectedRow.batch_id })\n.then(() => {\nmy_assigned_test_table.setSelectedRowIndex(-1);\n})\n}}",
+  "onRowSelected": "{{\n  barcode_for_tester.run({ code: awaiting_test_table.selectedRow.batch_id })\n    .then(() => {\n      return tester_name_in_tester.run({ code: awaiting_test_table.selectedRow.batch_id });\n    })\n    .then(() => {\n      my_assigned_test_table.setSelectedRowIndex(-1);\n    })\n}}",
   "originalBottomRow": 37,
   "originalTopRow": 4,
   "parentColumnSpace": 13.921875,
