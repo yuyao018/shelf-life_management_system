@@ -48,7 +48,7 @@
     "completion_date",
     "updated_at"
   ],
-  "columnUpdatedAt": 1747815737552,
+  "columnUpdatedAt": 1748675683243,
   "columnWidthMap": {
     "batch_name": 299,
     "maturity_date": 139,
@@ -131,10 +131,10 @@
       "key": "textSize"
     },
     {
-      "key": "onRowSelected"
+      "key": "primaryColumns.maturity_date.outputFormat"
     },
     {
-      "key": "primaryColumns.maturity_date.outputFormat"
+      "key": "onRowSelected"
     }
   ],
   "dynamicTriggerPathList": [
@@ -163,7 +163,7 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 3,
   "needsErrorInfo": false,
-  "onRowSelected": "{{get_tester_name.run().then(() => {});\nmy_assigned_test_table.setSelectedRowIndex(-1)}}",
+  "onRowSelected": "{{\nbarcode_for_tester.run({ code: awaiting_test_table.selectedRow.batch_id })\n.then(() => {\nmy_assigned_test_table.setSelectedRowIndex(-1);\n})\n}}",
   "originalBottomRow": 37,
   "originalTopRow": 4,
   "parentColumnSpace": 13.921875,

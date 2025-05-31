@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 32,
+  "bottomRow": 39,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -35,8 +35,8 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "originalBottomRow": 32,
-  "originalTopRow": 28,
+  "originalBottomRow": 39,
+  "originalTopRow": 35,
   "overflow": "NONE",
   "parentColumnSpace": 13.609375,
   "parentId": "3tugru7rv2",
@@ -45,10 +45,10 @@
   "responsiveBehavior": "fill",
   "rightColumn": 28,
   "shouldTruncate": false,
-  "text": "Part I: Owner Detail",
+  "text": "Part II: Owner Detail",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 28,
+  "topRow": 35,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

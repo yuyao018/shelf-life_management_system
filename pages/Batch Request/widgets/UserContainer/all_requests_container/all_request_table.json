@@ -236,7 +236,7 @@
   "mobileTopRow": 102,
   "multiRowSelection": false,
   "needsErrorInfo": false,
-  "onRowSelected": "{{get_tester_name.run()}}",
+  "onRowSelected": "{{get_tester_name.run().then(() => {\n  get_barcode_image.run();\n});}}",
   "originalBottomRow": 79,
   "originalTopRow": 7,
   "parentColumnSpace": 13.921875,

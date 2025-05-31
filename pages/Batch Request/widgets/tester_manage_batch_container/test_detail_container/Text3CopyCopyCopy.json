@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 43,
+  "bottomRow": 19,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,9 +11,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -28,33 +25,33 @@
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": "true",
-  "key": "4g39ya4vj3",
-  "leftColumn": 18,
+  "key": "qk63d6687s",
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 126,
-  "mobileLeftColumn": 44,
-  "mobileRightColumn": 60,
-  "mobileTopRow": 122,
+  "mobileBottomRow": 16,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "originalBottomRow": 43,
-  "originalTopRow": 39,
+  "originalBottomRow": 19,
+  "originalTopRow": 15,
   "overflow": "NONE",
-  "parentColumnSpace": 13.921875,
-  "parentId": "3tugru7rv2",
+  "parentColumnSpace": 13.609375,
+  "parentId": "4gj67751xt",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 55,
+  "rightColumn": 28,
   "shouldTruncate": false,
-  "text": "{{all_request_table.selectedRow.product_owner}}",
+  "text": "Part I: Barcode Detail",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 39,
+  "topRow": 15,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "x0j1hu9hgl",
-  "widgetName": "show_owner_name"
+  "widgetId": "u2xm1iucax",
+  "widgetName": "Text3CopyCopyCopy"
 }

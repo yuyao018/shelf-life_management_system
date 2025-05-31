@@ -131,9 +131,6 @@
       "key": "tableData"
     },
     {
-      "key": "onRowSelected"
-    },
-    {
       "key": "primaryColumns.assigned_at.outputFormat"
     }
   ],
@@ -163,7 +160,7 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 39,
   "needsErrorInfo": false,
-  "onRowSelected": "{{get_tester_name.run().then(() => {});\nawaiting_test_table.setSelectedRowIndex(-1)}}",
+  "onRowSelected": "{{tester_name_in_tester.run().then(() => {\n  awaiting_test_table.setSelectedRowIndex(-1);\n  barcode_for_tester.run();\n});}}",
   "originalBottomRow": 77,
   "originalTopRow": 42,
   "parentColumnSpace": 13.921875,
