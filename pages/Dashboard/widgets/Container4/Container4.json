@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 86,
+  "bottomRow": 101,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -83,8 +83,8 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 158,
   "needsErrorInfo": false,
-  "originalBottomRow": 86,
-  "originalTopRow": 47,
+  "originalBottomRow": 101,
+  "originalTopRow": 62,
   "parentColumnSpace": 16.859375,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -92,7 +92,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldScrollContents": true,
-  "topRow": 47,
+  "topRow": 62,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "iba130bkfm",
