@@ -3,13 +3,10 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 45,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonColor": "#71717a",
   "buttonVariant": "PRIMARY",
-  "disabledWhenInvalid": true,
+  "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
-    {
-      "key": "buttonColor"
-    },
     {
       "key": "borderRadius"
     }
@@ -23,28 +20,28 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "9tkbsxcunq",
-  "leftColumn": 32,
+  "key": "fcjmh3wuva",
+  "leftColumn": 25,
   "minWidth": 120,
-  "mobileBottomRow": 37,
-  "mobileLeftColumn": 46,
-  "mobileRightColumn": 62,
-  "mobileTopRow": 33,
+  "mobileBottomRow": 45,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 41,
   "needsErrorInfo": false,
-  "onClick": "{{edit_account.run().then(() => {\n  showAlert('Account update successfully', 'success');\n  click_edit_save_button.edit_save_buttononClick();\n  show_user.run();\n});}}",
-  "originalBottomRow": 46,
-  "originalTopRow": 42,
+  "onClick": "{{storeValue('user_section', 'manage_user');}}",
+  "parentColumnSpace": 7.471923828125,
   "parentId": "90yvm9bgo6",
+  "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
-  "resetFormOnClick": true,
+  "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 39,
-  "text": "Save",
+  "rightColumn": 32,
+  "text": "Back",
   "topRow": 41,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "enjh5zgezj",
-  "widgetName": "edit_save_button"
+  "widgetId": "bej2shn9ai",
+  "widgetName": "edit_back_button"
 }
