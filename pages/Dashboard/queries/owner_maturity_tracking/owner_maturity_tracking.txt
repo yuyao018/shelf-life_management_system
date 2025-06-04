@@ -9,6 +9,7 @@ FROM
     batch
 WHERE 
     maturity_date > CURDATE() + INTERVAL 2 MONTH
+		AND status != 'Completed'
     AND product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
 
 UNION ALL
@@ -24,6 +25,7 @@ FROM
     batch
 WHERE 
     maturity_date BETWEEN CURDATE() AND CURDATE() + INTERVAL 10 DAY
+		AND status != 'Completed'
     AND product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
 
 UNION ALL
@@ -40,6 +42,7 @@ FROM
 WHERE 
     maturity_date > CURDATE() + INTERVAL 10 DAY
     AND maturity_date <= CURDATE() + INTERVAL 2 MONTH
+		AND status != 'Completed'
     AND product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
 
 ORDER BY 
