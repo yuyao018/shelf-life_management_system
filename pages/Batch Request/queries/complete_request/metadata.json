@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE batch\nSET status = 'Completed', completion_date = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP\nWHERE approval_status = 'Approved' and batch_id = '{{all_request_table.selectedRow.batch_id}}';",
+      "body": "UPDATE batch\nSET status = 'Completed', completion_date = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP\nWHERE approval_status = 'Approved' and batch_id = '{{my_assigned_test_table.selectedRow.batch_id}}';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
