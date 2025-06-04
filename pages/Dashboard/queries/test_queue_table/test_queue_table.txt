@@ -11,6 +11,7 @@ LEFT JOIN tester t
 LEFT JOIN account a 
     ON t.tester_id COLLATE utf8mb4_general_ci = a.user_id COLLATE utf8mb4_general_ci
 WHERE b.approval_status COLLATE utf8mb4_general_ci = 'Approved'
+AND b.status != 'Completed'
 AND (
     '{{select_status.selectedOptionValue}}' = 'None'
     OR b.status = '{{select_status.selectedOptionValue}}'

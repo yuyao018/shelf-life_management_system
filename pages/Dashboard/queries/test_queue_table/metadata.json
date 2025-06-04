@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    b.test_id,\n    b.batch_name,\n    b.quantity,\n    b.status,\n    t.tester_id,\n    a.name AS tester_name\nFROM batch b\nLEFT JOIN tester t \n    ON b.test_id COLLATE utf8mb4_general_ci = t.test_id COLLATE utf8mb4_general_ci\nLEFT JOIN account a \n    ON t.tester_id COLLATE utf8mb4_general_ci = a.user_id COLLATE utf8mb4_general_ci\nWHERE b.approval_status COLLATE utf8mb4_general_ci = 'Approved'\nAND (\n    '{{select_status.selectedOptionValue}}' = 'None'\n    OR b.status = '{{select_status.selectedOptionValue}}'\n)\nAND (\n    '{{appsmith.store.user_role}}' = 'admin'\n    OR '{{appsmith.store.user_role}}' = 'tester'\n    OR b.product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')\n);\n",
+      "body": "SELECT \n    b.test_id,\n    b.batch_name,\n    b.quantity,\n    b.status,\n    t.tester_id,\n    a.name AS tester_name\nFROM batch b\nLEFT JOIN tester t \n    ON b.test_id COLLATE utf8mb4_general_ci = t.test_id COLLATE utf8mb4_general_ci\nLEFT JOIN account a \n    ON t.tester_id COLLATE utf8mb4_general_ci = a.user_id COLLATE utf8mb4_general_ci\nWHERE b.approval_status COLLATE utf8mb4_general_ci = 'Approved'\nAND b.status != 'Completed'\nAND (\n    '{{select_status.selectedOptionValue}}' = 'None'\n    OR b.status = '{{select_status.selectedOptionValue}}'\n)\nAND (\n    '{{appsmith.store.user_role}}' = 'admin'\n    OR '{{appsmith.store.user_role}}' = 'tester'\n    OR b.product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')\n);\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
