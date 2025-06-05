@@ -34,7 +34,7 @@
         },
         {
           "key": "batch_id",
-          "value": "{{awaiting_test_table.selectedRow?.batch_id || my_assigned_test_table.selectedRow?.batch_id}}"
+          "value": "{{all_request_table.selectedRow?.batch_id || awaiting_test_table.selectedRow?.batch_id || my_assigned_test_table.selectedRow?.batch_id}}"
         }
       ],
       "timeoutInMillisecond": 10000
