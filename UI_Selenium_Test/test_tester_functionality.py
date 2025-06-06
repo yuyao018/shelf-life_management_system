@@ -12,7 +12,7 @@ import base64
 
 # python -m pytest testing/tester_test.py --html=testing/report_tester.html --self-contained-html
 
-screenshot_storage = "C:/Users/chook/OneDrive/Documents/INTI/Sem 4/Software Engineering/Assignment/script/testing/screenshots"
+screenshot_storage = "your/path/to/store/screenshots"
 
 @pytest.fixture(scope="session")
 def browser_driver():
