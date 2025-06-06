@@ -76,25 +76,10 @@
       "key": "primaryColumns.category.computedValue"
     },
     {
-      "key": "primaryColumns.batch_id.cellBackground"
-    },
-    {
-      "key": "primaryColumns.maturity_date.cellBackground"
-    },
-    {
-      "key": "primaryColumns.days_until_expiry.cellBackground"
-    },
-    {
       "key": "primaryColumns.batch_name.computedValue"
     },
     {
       "key": "primaryColumns.product_owner.computedValue"
-    },
-    {
-      "key": "primaryColumns.batch_name.cellBackground"
-    },
-    {
-      "key": "primaryColumns.product_owner.cellBackground"
     }
   ],
   "dynamicPropertyPathList": [
@@ -106,9 +91,6 @@
     },
     {
       "key": "primaryColumns.days_until_expiry.cellBackground"
-    },
-    {
-      "key": "primaryColumns.batch_id.cellBackground"
     },
     {
       "key": "primaryColumns.maturity_date.cellBackground"
@@ -152,7 +134,7 @@
       "alias": "batch_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "{{(() => { const tableData = maturity_table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\" )) :  currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\"  })()}}",
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{maturity_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"batch_id\"]))}}",
       "currencyCode": "USD",
@@ -184,7 +166,7 @@
       "alias": "batch_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "{{(() => { const tableData = maturity_table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\" )) :  currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\"  })()}}",
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{maturity_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"batch_name\"]))}}",
       "currencyCode": "USD",
@@ -250,7 +232,7 @@
       "alias": "days_until_expiry",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "{{(() => { const tableData = maturity_table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\" )) :  currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\"  })()}}",
+      "cellBackground": "",
       "columnType": "number",
       "computedValue": "{{maturity_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"days_until_expiry\"]))}}",
       "currencyCode": "USD",
@@ -282,7 +264,7 @@
       "alias": "maturity_date",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "{{(() => { const tableData = maturity_table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\" )) :  currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\"  })()}}",
+      "cellBackground": "",
       "columnType": "date",
       "computedValue": "{{maturity_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"maturity_date\"]))}}",
       "currencyCode": "USD",
@@ -315,7 +297,7 @@
       "alias": "product_owner",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "{{(() => { const tableData = maturity_table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\" )) :  currentRow.category.trim().toLowerCase() === \"expiring in 2 months\" \n    ? \"#FAB12F\" \n    : currentRow.category.trim().toLowerCase() === \"expiring in 10 days\" \n        ? \"#FA4032\" \n        : \"transparent\"  })()}}",
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{maturity_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"product_owner\"]))}}",
       "currencyCode": "USD",
