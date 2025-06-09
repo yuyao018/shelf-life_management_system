@@ -3,12 +3,15 @@ install the library (can run at terminal): pip install schedule
 
 """
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file, abort
 import subprocess
 import sys
 import threading
 import schedule
 import time
+import os
+
+BARCODE_IMAGE_FOLDER = "C:/Users/chook/OneDrive/Documents/INTI/Sem 4/Software Engineering/Assignment/script/barcodes"
 
 def execute_script(command):
     try:
@@ -31,7 +34,7 @@ def execute_script(command):
         }, 500
 
 def handle_database_to_csv():
-    return execute_script(['python', 'database_to_csv_env.py'])
+    return execute_script(['python', 'database_to_csv.py'])
 
 def handle_edit_csv(batch_id):
     return execute_script(['python', 'edit_csv.py', str(batch_id), '--verbose'])
@@ -40,6 +43,20 @@ def handle_email_reminder():
     return execute_script(['python', 'email_reminder.py'])
 
 app = Flask(__name__)
+
+@app.route("/", methods=["GET"])
+def get_barcode_image():
+    batch_id = request.args.get("batch_id", "")
+    if not batch_id:
+        return "Missing 'batch_id' parameter", 400
+
+    image_filename = f"{batch_id}_barcode.png"
+    image_path = os.path.join(BARCODE_IMAGE_FOLDER, image_filename)
+
+    if not os.path.exists(image_path):
+        return abort(404, description="Barcode image not found")
+
+    return send_file(image_path, mimetype='image/png')
 
 @app.route("/", methods=["POST"])
 def run_script():
@@ -72,7 +89,7 @@ def schedule_runner():
 
 # === Start Flask and Scheduler Together ===
 if __name__ == "__main__":
-     # Start scheduler in a separate thread
+    # Start scheduler in a separate thread
     scheduler_thread = threading.Thread(target=schedule_runner, daemon=True)
     scheduler_thread.start()
 
