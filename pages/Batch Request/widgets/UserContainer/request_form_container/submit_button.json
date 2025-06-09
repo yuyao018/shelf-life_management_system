@@ -16,11 +16,17 @@
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -29,7 +35,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{!owner_name_input.isValid || !owner_email_input.isValid || !batch_name_input.isValid || !quantity_input.isValid || !maturity_date_input.selectedDate || !location_name_input.isValid}}",
   "isLoading": false,
   "isVisible": "{{appsmith.store.user_role === \"owner\"}}",
   "key": "0nxgyilyr1",

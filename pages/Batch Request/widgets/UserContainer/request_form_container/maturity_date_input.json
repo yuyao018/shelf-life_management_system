@@ -29,7 +29,7 @@
   "firstDayOfWeek": "0",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": true,
   "isVisible": true,
   "key": "ul6zh0n881",
   "label": "Maturity Date",

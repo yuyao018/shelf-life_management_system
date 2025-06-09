@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 92,
+  "bottomRow": 91,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -38,8 +38,8 @@
   "mobileRightColumn": 60,
   "mobileTopRow": 122,
   "needsErrorInfo": false,
-  "originalBottomRow": 91,
-  "originalTopRow": 86,
+  "originalBottomRow": 92,
+  "originalTopRow": 87,
   "overflow": "NONE",
   "parentColumnSpace": 13.921875,
   "parentId": "3tugru7rv2",
@@ -51,7 +51,7 @@
   "text": "{{all_request_table.selectedRow.test_id}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 87,
+  "topRow": 86,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
