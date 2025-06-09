@@ -12,6 +12,14 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -20,7 +28,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{!nameInput.isValid || !emailInput.isValid || !passwordInput.isValid || !roleSelect.isValid}}",
   "isLoading": false,
   "isVisible": true,
   "key": "9tkbsxcunq",
