@@ -1,0 +1,2 @@
+batch_id,batch_name,quantity,storage_location,barcode,status,product_owner,product_owner_email,approved_by,approval_status,submission_date,maturity_date,completion_date,updated_at,test_id
+3d72b249-344d-11f0-a91c-005056c00001,SPUR II Infant Resuscitator Batch DD121,250,Warehouse Zone A14,barcodes\3d72b249-344d-11f0-a91c-005056c00001_barcode.png,Not Started,Benjamin Lim,benjaminlim@gmail.com,Alice Tan,Approved,2025-05-19 09:04:39,2025-08-19 16:00:00,,2025-05-20 19:51:57,3d72b530-344d-11f0-a91c-005056c00001

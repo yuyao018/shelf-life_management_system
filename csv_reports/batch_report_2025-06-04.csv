@@ -1,0 +1,3 @@
+batch_id,batch_name,quantity,storage_location,barcode,status,product_owner,product_owner_email,approved_by,approval_status,submission_date,maturity_date,completion_date,updated_at,test_id
+21647269-4137-11f0-8378-0a002700000e,AmbuBlue Neonatal Resuscitator Batch D4,100,Warehouse Zone Q13,barcodes\21647269-4137-11f0-8378-0a002700000e_barcode.png,,Jack Wong,jackwong@gmail.com,,Pending,2025-06-04 19:29:08,2025-09-04 16:00:00,,2025-06-05 10:07:52,21647329-4137-11f0-8378-0a002700000e
+e1679e79-4136-11f0-8378-0a002700000e,AmbuMark IV Mask Batch C3,500,Warehouse Zone T12,barcodes\e1679e79-4136-11f0-8378-0a002700000e_barcode.png,,Kelly Chua,kellychua@gmail.com,,Pending,2025-06-04 19:27:21,2025-07-31 16:00:00,,2025-06-04 19:27:21,e167a3d7-4136-11f0-8378-0a002700000e
