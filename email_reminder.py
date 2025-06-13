@@ -18,7 +18,7 @@ import smtplib
 import os
 from email.message import EmailMessage
 import mysql.connector
-from datetime import date, datetime # Import datetime for type hinting/clarity
+from datetime import date, datetime 
 from collections import defaultdict
 from dotenv import load_dotenv
 
