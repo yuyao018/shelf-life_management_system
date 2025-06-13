@@ -12,13 +12,13 @@ https://myaccount.google.com/apppasswords
 
 Run this code without using an organisation's WiFi
 
-Updated by: Shirlyn, 06/06/2025, 10.28a.m. 
+Updated by: Shirlyn, 13/06/2025, 7.58p.m.
 """
 import smtplib
 import os
 from email.message import EmailMessage
 import mysql.connector
-from datetime import date
+from datetime import date, datetime # Import datetime for type hinting/clarity
 from collections import defaultdict
 from dotenv import load_dotenv
 
@@ -43,10 +43,11 @@ def fetch_admin_emails(cursor):
     cursor.execute("SELECT email FROM account WHERE role = 'admin'")
     return [row['email'] for row in cursor.fetchall()]
 
-# === Fetch batches with maturity 60 or 10 days from today ===
-def fetch_batches(cursor):
+# === Fetch batches with maturity 60 or 10 days from a given date ===
+def fetch_batches(cursor, current_date: date):
+    # Use the provided current_date for calculations in the SQL query
     query = """
-   SELECT 
+    SELECT
         a.name AS tester_name,
         a.email AS tester_email,
         b.batch_id,
@@ -57,25 +58,26 @@ def fetch_batches(cursor):
     FROM batch b
     JOIN tester t ON b.test_id = t.test_id
     JOIN account a ON t.tester_id = a.user_id
-    WHERE DATE(b.maturity_date) = DATE_ADD(CURDATE(), INTERVAL 60 DAY)
-       OR DATE(b.maturity_date) = DATE_ADD(CURDATE(), INTERVAL 10 DAY)
+    WHERE DATE(b.maturity_date) = DATE_ADD(%s, INTERVAL 60 DAY)
+        OR DATE(b.maturity_date) = DATE_ADD(%s, INTERVAL 10 DAY)
     ORDER BY a.email, b.maturity_date;
     """
-    cursor.execute(query)
+    cursor.execute(query, (current_date, current_date)) 
     return cursor.fetchall()
 
 # === Group batches by tester email ===
-def group_batches_by_tester(rows, admin_emails):
+def group_batches_by_tester(rows, admin_emails, current_date: date):
     grouped = defaultdict(lambda: {"name": "", "to": set(), "cc": set(), "batches": []})
 
     for row in rows:
-        key = (row['tester_email'], row['product_owner_email'])  # Unique combo per email group
+        key = (row['tester_email'], row['product_owner_email'])
         email_key = f"{row['tester_email']}+{row['product_owner_email']}"
 
-        days_left = (row['maturity_date'].date() - date.today()).days
+        # Use the provided current_date for 'days_left' calculation
+        days_left = (row['maturity_date'].date() - current_date).days
         label = f"{days_left} days left"
 
-        grouped[email_key]["name"] = row["tester_name"]  # Or use a more general name if needed
+        grouped[email_key]["name"] = row["tester_name"]
         grouped[email_key]["to"].update({row["tester_email"], row["product_owner_email"]})
         grouped[email_key]["cc"].update(admin_emails)
         grouped[email_key]["batches"].append({
@@ -135,14 +137,19 @@ def send_emails(grouped, admin_emails, email_address, email_password):
             smtp.send_message(msg)
 
 # === Main ===
-def main():
+# The 'current_date' parameter is now part of the main function, with a default for regular execution.
+def main(current_date: date = None):
     db_config = load_db_config()
     conn = connect_db(db_config)
     cursor = conn.cursor(dictionary=True)
 
-    rows = fetch_batches(cursor)
+    # If no current_date is provided, use today's date (for normal execution)
+    if current_date is None:
+        current_date = date.today()
+
+    rows = fetch_batches(cursor, current_date) 
     admin_emails = fetch_admin_emails(cursor)
-    testers = group_batches_by_tester(rows, admin_emails)
+    testers = group_batches_by_tester(rows, admin_emails, current_date) 
 
 
     if not testers:
