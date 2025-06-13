@@ -1,0 +1,29 @@
+test_api_barcode_image_not_found (__main__.ScriptIntegrationTests.test_api_barcode_image_not_found)
+🧪 API /?batch_id=invalid_id should return 404 for non-existent batch ID. ... ok
+test_api_database_to_csv (__main__.ScriptIntegrationTests.test_api_database_to_csv)
+🧪 API /?script=database_to_csv should export DB to CSV. ... ok
+test_api_edit_csv (__main__.ScriptIntegrationTests.test_api_edit_csv)
+🧪 API /?script=edit_csv should regenerate CSV for a specific batch_id. ... ok
+test_api_email_reminder (__main__.ScriptIntegrationTests.test_api_email_reminder)
+🧪 API /?script=email_reminder should trigger email reminders. ... ok
+test_api_no_script_parameter (__main__.ScriptIntegrationTests.test_api_no_script_parameter)
+🧪 API call with no 'script' parameter should return a default or error response. ... ok
+test_api_unrecognized_script_parameter (__main__.ScriptIntegrationTests.test_api_unrecognized_script_parameter)
+🧪 API call with an unrecognized 'script' parameter should return a 400 error. ... ok
+test_database_to_csv_script (__main__.ScriptIntegrationTests.test_database_to_csv_script)
+🧪 database_to_csv.py generates CSV and updates DB with barcode image paths for today's batches. ... ok
+test_database_to_csv_script_no_batches (__main__.ScriptIntegrationTests.test_database_to_csv_script_no_batches)
+🧪 database_to_csv.py handles case with no batches for today. ... ok
+test_edit_csv_script (__main__.ScriptIntegrationTests.test_edit_csv_script)
+🧪 edit_csv.py regenerates CSV and barcodes for a valid batch_id. ... ok
+test_edit_csv_script_invalid_batch_id (__main__.ScriptIntegrationTests.test_edit_csv_script_invalid_batch_id)
+🧪 edit_csv.py handles invalid batch_id gracefully. ... ok
+test_email_reminder_script (__main__.ScriptIntegrationTests.test_email_reminder_script)
+🧪 email_reminder.py sends grouped emails using mocked SMTP. ... ok
+test_email_reminder_script_no_upcoming_batches (__main__.ScriptIntegrationTests.test_email_reminder_script_no_upcoming_batches)
+🧪 email_reminder.py handles case with no upcoming batches. ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 16.603s
+
+OK
