@@ -1,2 +1,0 @@
-batch_id,batch_name,quantity,storage_location,barcode,status,product_owner,product_owner_email,approved_by,approval_status,submission_date,maturity_date,completion_date,updated_at,test_id
-1f70d755-4534-11f0-a0b4-e4a8dfe455c6,BatchA60,100,Warehouse A,barcodes\1f70d755-4534-11f0-a0b4-e4a8dfe455c6_barcode.png,Pending,Carol Owner,carol.owner@example.com,Eve Admin,Approved,2025-06-09 09:00:00,2025-08-05 09:00:00,,2025-06-06 09:00:00,1f70d7af-4534-11f0-a0b4-e4a8dfe455c6

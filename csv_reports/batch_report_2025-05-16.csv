@@ -1,3 +1,0 @@
-batch_id,batch_name,quantity,storage_location,barcode,status,product_owner,product_owner_email,approved_by,approval_status,submission_date,maturity_date,completion_date,updated_at,test_id
-65a3b043-3206-11f0-94dd-e4a8dfe455c6,Batch208,250,Shelf B2,,pending,Huey,shuichiww@gmail.com,,pending,2025-05-16 11:31:34,2025-06-16 00:00:00,,2025-05-16 11:31:34,65a3b054-3206-11f0-94dd-e4a8dfe455c6
-65a3b176-3206-11f0-94dd-e4a8dfe455c6,Batch209,50,Freezer C1,barcodes\65a3b176-3206-11f0-94dd-e4a8dfe455c6_barcode.png,pending,Shirlyn,shirlynhuey@gmail.com,Admin2,pending,2025-05-16 11:31:34,2025-06-19 00:00:00,,2025-05-16 11:31:34,65a3b17f-3206-11f0-94dd-e4a8dfe455c6
