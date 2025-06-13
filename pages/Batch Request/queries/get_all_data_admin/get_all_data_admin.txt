@@ -1,0 +1,4 @@
+SELECT * FROM batch 
+WHERE (approval_status = '{{approval_status_select.selectedOptionValue}}' OR '{{approval_status_select.selectedOptionValue}}' = '') AND (status = '{{status_select.selectedOptionValue}}' OR '{{status_select.selectedOptionValue}}' = '')
+ORDER BY submission_date DESC
+LIMIT 50;

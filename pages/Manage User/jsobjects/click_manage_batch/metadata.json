@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6829a14f0b957058348e8af4_70f90a6d-fb9a-4953-952a-ce09d00f9c63",
+  "id": "Manage User_click_manage_batch",
+  "unpublishedCollection": {
+    "name": "click_manage_batch",
+    "pageId": "Manage User",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

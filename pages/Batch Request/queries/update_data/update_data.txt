@@ -1,0 +1,10 @@
+UPDATE batch
+SET product_owner = '{{owner_name_input.text}}', product_owner_email = '{{owner_email_input.text}}', batch_name = '{{batch_name_input.text}}', quantity = '{{quantity_input.text}}', maturity_date = STR_TO_DATE(SUBSTRING('{{maturity_date_input.selectedDate}}', 1, 19), '%Y-%m-%dT%H:%i:%s'), storage_location = '{{location_name_input.text}}', updated_at = CURRENT_TIMESTAMP
+WHERE batch_id = '{{all_request_table.selectedRow.batch_id}}';
+
+INSERT INTO tester (test_id)
+SELECT test_id
+FROM batch
+WHERE test_id COLLATE utf8mb4_general_ci NOT IN (
+	SELECT test_id COLLATE utf8mb4_general_ci FROM tester
+);

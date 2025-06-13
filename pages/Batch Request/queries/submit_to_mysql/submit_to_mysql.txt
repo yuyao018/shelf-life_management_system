@@ -1,0 +1,9 @@
+INSERT INTO `batch`(`product_owner`, `product_owner_email`, `batch_name`, `quantity`, `maturity_date`, `storage_location`, `submission_date`, `approval_status`) VALUES
+('{{owner_name_input.text}}', '{{owner_email_input.text}}', '{{batch_name_input.text}}', {{quantity_input.text}}, 
+STR_TO_DATE(SUBSTRING('{{maturity_date_input.selectedDate}}', 1, 19), '%Y-%m-%dT%H:%i:%s'), '{{location_name_input.text}}', CURRENT_TIMESTAMP, 'Pending');
+
+INSERT INTO `tester`(`test_id`)
+SELECT test_id
+FROM batch
+ORDER BY submission_date DESC
+LIMIT 1;

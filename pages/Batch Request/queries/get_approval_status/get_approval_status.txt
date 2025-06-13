@@ -1,0 +1,1 @@
+SELECT approval_status FROM batch WHERE batch_id = '{{all_request_table.selectedRow.batch_id}}'

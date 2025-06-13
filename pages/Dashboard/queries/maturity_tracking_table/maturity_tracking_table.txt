@@ -1,0 +1,32 @@
+-- All batches categorized by expiry window
+SELECT 
+    batch_id,
+		batch_name,
+		product_owner,
+    maturity_date,
+    DATEDIFF(maturity_date, CURDATE()) AS days_until_expiry,
+    'Expiring in 10 Days' AS category
+FROM 
+    batch
+WHERE 
+    maturity_date BETWEEN CURDATE() AND CURDATE() + INTERVAL 10 DAY
+		AND status != 'Completed'
+
+UNION ALL
+
+SELECT 
+    batch_id,
+		batch_name,
+		product_owner,
+    maturity_date,
+    DATEDIFF(maturity_date, CURDATE()) AS days_until_expiry,
+    'Expiring in 2 Months' AS category
+FROM 
+    batch
+WHERE 
+    maturity_date > CURDATE() + INTERVAL 10 DAY
+    AND maturity_date <= CURDATE() + INTERVAL 2 MONTH
+		AND status != 'Completed'
+
+ORDER BY 
+    days_until_expiry ASC;

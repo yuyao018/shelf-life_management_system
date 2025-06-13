@@ -1,0 +1,9 @@
+SELECT 
+    COUNT(*) AS total,
+    t.tester_id
+FROM batch b
+LEFT JOIN tester t ON b.test_id = t.test_id
+WHERE 
+    b.status = 'Pending'
+    AND '{{appsmith.store.user_role}}' = 'tester'
+    AND '{{appsmith.store.user_id}}' = t.tester_id;

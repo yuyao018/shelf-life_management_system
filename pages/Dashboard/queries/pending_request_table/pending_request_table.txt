@@ -1,0 +1,6 @@
+SELECT * FROM batch
+WHERE approval_status = 'Pending'
+AND (
+	'{{appsmith.store.user_role}}' = 'admin'
+	OR product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
+);

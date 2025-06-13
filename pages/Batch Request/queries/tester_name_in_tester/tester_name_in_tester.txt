@@ -1,0 +1,4 @@
+SELECT a.name
+FROM tester t
+JOIN account a ON t.tester_id = a.user_id
+WHERE t.test_id = '{{my_assigned_test_table.selectedRow.test_id}}';

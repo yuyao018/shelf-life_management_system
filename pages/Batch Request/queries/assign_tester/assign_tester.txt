@@ -1,0 +1,7 @@
+UPDATE batch
+SET status = 'Pending', updated_at = CURRENT_TIMESTAMP
+WHERE approval_status = 'Approved' and test_id = '{{awaiting_test_table.selectedRow.test_id}}';
+
+UPDATE tester
+SET tester_id = '{{appsmith.store.user_id}}', assigned_at = CURRENT_TIMESTAMP
+WHERE test_id = '{{awaiting_test_table.selectedRow.test_id}}';

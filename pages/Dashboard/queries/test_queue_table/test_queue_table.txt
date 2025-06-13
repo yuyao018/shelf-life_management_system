@@ -1,0 +1,23 @@
+SELECT 
+    b.test_id,
+    b.batch_name,
+    b.quantity,
+    b.status,
+    t.tester_id,
+    a.name AS tester_name
+FROM batch b
+LEFT JOIN tester t 
+    ON b.test_id COLLATE utf8mb4_general_ci = t.test_id COLLATE utf8mb4_general_ci
+LEFT JOIN account a 
+    ON t.tester_id COLLATE utf8mb4_general_ci = a.user_id COLLATE utf8mb4_general_ci
+WHERE b.approval_status COLLATE utf8mb4_general_ci = 'Approved'
+AND b.status != 'Completed'
+AND (
+    '{{select_status.selectedOptionValue}}' = 'None'
+    OR b.status = '{{select_status.selectedOptionValue}}'
+)
+AND (
+    '{{appsmith.store.user_role}}' = 'admin'
+    OR '{{appsmith.store.user_role}}' = 'tester'
+    OR b.product_owner = (SELECT name FROM account WHERE user_id = '{{appsmith.store.user_id}}')
+);

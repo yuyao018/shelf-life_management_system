@@ -1,0 +1,10 @@
+SELECT 
+    a.user_id AS tester_id,
+    a.name AS tester_name,
+    COUNT(t.test_id) AS total_test
+FROM account a
+LEFT JOIN tester t 
+    ON t.tester_id COLLATE utf8mb4_general_ci = a.user_id COLLATE utf8mb4_general_ci
+WHERE a.role = "tester"
+GROUP BY a.user_id, a.name
+ORDER BY tester_name ASC;

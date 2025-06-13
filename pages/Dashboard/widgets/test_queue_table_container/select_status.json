@@ -1,0 +1,66 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultOptionValue": "None",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "t4k3pt34ml",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Status",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "4",
+  "leftColumn": 45,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 223,
+  "mobileLeftColumn": 17,
+  "mobileRightColumn": 37,
+  "mobileTopRow": 216,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{test_queue_table.run()}}",
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 220,
+  "originalTopRow": 216,
+  "parentColumnSpace": 16.859375,
+  "parentId": "tfqv5qoxvg",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  {\n    \"name\": \"None\",\n    \"code\": \"None\"\n  },\n\t{\n    \"name\": \"Not Started\",\n    \"code\": \"Not Started\"\n  },\n  {\n    \"name\": \"Pending\",\n    \"code\": \"Pending\"\n  }\n]",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "qar0xd7zgy",
+  "widgetName": "select_status"
+}

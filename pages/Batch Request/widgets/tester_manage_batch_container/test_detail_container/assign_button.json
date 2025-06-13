@@ -1,0 +1,59 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 5,
+  "bottomRowBeforeCollapse": 5,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{awaiting_test_table.selectedRowIndex >= 0}}\n",
+  "key": "jiwvm85569",
+  "leftColumn": 54,
+  "minWidth": 120,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 38,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 9,
+  "needsErrorInfo": false,
+  "onClick": "{{assign_tester.run().then(() => {\n  edit_csv.run();\n  awaiting_test.run();\n  my_test.run();\n});}}",
+  "originalBottomRow": 5,
+  "originalTopRow": 1,
+  "parentColumnSpace": 7.8046875,
+  "parentId": "4gj67751xt",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "text": "Assign",
+  "topRow": 1,
+  "topRowBeforeCollapse": 1,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "syeyusg4v4",
+  "widgetName": "assign_button"
+}

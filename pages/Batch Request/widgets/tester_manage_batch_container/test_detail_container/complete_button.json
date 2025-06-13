@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 9,
+  "bottomRowBeforeCollapse": 9,
+  "boxShadow": "none",
+  "buttonColor": "green",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{my_assigned_test_table.selectedRowIndex >= 0}}\n",
+  "key": "auy6bx9f3r",
+  "leftColumn": 55,
+  "minWidth": 120,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onClick": "{{complete_request.run().then(() => {\n  edit_csv.run();\n  my_test.run();\n});}}",
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
+  "parentColumnSpace": 6.430908203125,
+  "parentId": "4gj67751xt",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "text": "Completed",
+  "topRow": 5,
+  "topRowBeforeCollapse": 5,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "jv077q0br8",
+  "widgetName": "complete_button"
+}

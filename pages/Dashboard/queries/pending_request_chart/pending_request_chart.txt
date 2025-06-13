@@ -1,0 +1,5 @@
+SELECT product_owner AS requestor, COUNT(batch_id) AS total_batches
+FROM batch
+WHERE approval_status = "Pending"
+GROUP BY requestor
+ORDER BY requestor ASC;

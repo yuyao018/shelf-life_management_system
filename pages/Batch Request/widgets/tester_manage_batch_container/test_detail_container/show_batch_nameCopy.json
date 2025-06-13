@@ -1,0 +1,60 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 49,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": "true",
+  "key": "4g39ya4vj3",
+  "leftColumn": 19,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 126,
+  "mobileLeftColumn": 44,
+  "mobileRightColumn": 60,
+  "mobileTopRow": 122,
+  "needsErrorInfo": false,
+  "originalBottomRow": 50,
+  "originalTopRow": 45,
+  "overflow": "NONE",
+  "parentColumnSpace": 13.921875,
+  "parentId": "4gj67751xt",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 59,
+  "shouldTruncate": false,
+  "text": "{{ \n  awaiting_test_table.selectedRow && awaiting_test_table.selectedRow.batch_name \n  ? awaiting_test_table.selectedRow.batch_name \n  : my_assigned_test_table.selectedRow && my_assigned_test_table.selectedRow.batch_name \n}}\n",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 45,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "7p4qzna8lu",
+  "widgetName": "show_batch_nameCopy"
+}

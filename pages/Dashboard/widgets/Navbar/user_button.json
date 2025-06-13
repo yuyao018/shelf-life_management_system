@@ -1,0 +1,54 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "#18181b",
+  "buttonVariant": "TERTIARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "user",
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{appsmith.store.user_role === \"admin\"}}",
+  "key": "9tkbsxcunq",
+  "leftColumn": 45,
+  "minWidth": 120,
+  "mobileBottomRow": 18,
+  "mobileLeftColumn": 36,
+  "mobileRightColumn": 52,
+  "mobileTopRow": 14,
+  "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Manage User', {}, 'SAME_WINDOW').then(() => {\n  manage_user.user_buttononClick();\n});}}",
+  "parentColumnSpace": 14.234375,
+  "parentId": "rgo3ord30z",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 49,
+  "text": "User",
+  "topRow": 0,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "evpico8xo7",
+  "widgetName": "user_button"
+}

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6829a14f0b957058348e8af4_b53d5070-bcbf-416c-a25e-08f959f0779e",
+  "id": "Batch Request_logout",
+  "unpublishedCollection": {
+    "name": "logout",
+    "pageId": "Batch Request",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

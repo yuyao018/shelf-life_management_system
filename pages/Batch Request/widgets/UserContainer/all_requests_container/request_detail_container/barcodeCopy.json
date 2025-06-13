@@ -1,0 +1,45 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 34,
+  "boxShadow": "none",
+  "defaultImage": "https://assets.appsmith.com/widgets/default.png",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "image"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "{{\nall_request_table.selectedRowIndex >= 0 \n    ? get_barcode_image.data\n    : \"https://assets.appsmith.com/widgets/default.png\"\n}}",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "j11476i9hj",
+  "leftColumn": 0,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 72,
+  "mobileLeftColumn": 41,
+  "mobileRightColumn": 53,
+  "mobileTopRow": 60,
+  "needsErrorInfo": false,
+  "objectFit": "contain",
+  "originalBottomRow": 34,
+  "originalTopRow": 28,
+  "parentColumnSpace": 13.609375,
+  "parentId": "3tugru7rv2",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "topRow": 28,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "wqhonuhn3m",
+  "widgetName": "barcodeCopy"
+}
