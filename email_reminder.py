@@ -1,4 +1,3 @@
-
 """
 - generate emails to be sent to the testers and cc the product owner
 - emails that will be sent are 60 days and 10 days before the maturity date
@@ -47,12 +46,14 @@ def fetch_admin_emails(cursor):
 # === Fetch batches with maturity 60 or 10 days from today ===
 def fetch_batches(cursor):
     query = """
-    SELECT 
+   SELECT 
         a.name AS tester_name,
         a.email AS tester_email,
         b.batch_id,
         b.batch_name,
-        b.maturity_date
+        b.maturity_date,
+        b.product_owner,
+        b.product_owner_email
     FROM batch b
     JOIN tester t ON b.test_id = t.test_id
     JOIN account a ON t.tester_id = a.user_id
@@ -65,51 +66,54 @@ def fetch_batches(cursor):
 
 # === Group batches by tester email ===
 def group_batches_by_tester(rows, admin_emails):
-    testers = defaultdict(lambda: {"name": "", "email": "", "cc": set(), "batches": []})
+    grouped = defaultdict(lambda: {"name": "", "to": set(), "cc": set(), "batches": []})
 
     for row in rows:
-        tester_email = row['tester_email']
-        maturity_date = row['maturity_date']
-        days_left = (maturity_date.date() - date.today()).days
+        key = (row['tester_email'], row['product_owner_email'])  # Unique combo per email group
+        email_key = f"{row['tester_email']}+{row['product_owner_email']}"
+
+        days_left = (row['maturity_date'].date() - date.today()).days
         label = f"{days_left} days left"
 
-        testers[tester_email]["name"] = row['tester_name']
-        testers[tester_email]["email"] = tester_email
-        testers[tester_email]["cc"].update(admin_emails)  # Use admins instead of product owner
-        testers[tester_email]["batches"].append({
+        grouped[email_key]["name"] = row["tester_name"]  # Or use a more general name if needed
+        grouped[email_key]["to"].update({row["tester_email"], row["product_owner_email"]})
+        grouped[email_key]["cc"].update(admin_emails)
+        grouped[email_key]["batches"].append({
             "batch_id": row["batch_id"],
             "batch_name": row["batch_name"],
-            "maturity_date": maturity_date.strftime('%Y-%m-%d'),
+            "maturity_date": row["maturity_date"].strftime('%Y-%m-%d'),
             "label": label
         })
-    return testers
+
+    return grouped
 
 
 # === Send emails ===
-def send_emails(testers, admin_emails, email_address, email_password):
+def send_emails(grouped, admin_emails, email_address, email_password):
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
         smtp.login(email_address, email_password)
 
-        for tester_email, tester_data in testers.items():
-            if not tester_email:
+        for group_key, group_data in grouped.items():
+            to_emails = list(group_data["to"])
+            if not to_emails:
                 continue
 
             msg = EmailMessage()
             msg['Subject'] = "Upcoming Batch Maturity Reminders"
             msg['From'] = email_address
-            msg['To'] = tester_email
+            msg['To'] = ', '.join(to_emails)
             msg['Cc'] = ', '.join(admin_emails)
 
             # Build HTML table
             table_rows = ''.join(
                 f"<tr><td>{b['batch_id']}</td><td>{b['batch_name']}</td><td>{b['maturity_date']}</td><td>{b['label']}</td></tr>"
-                for b in tester_data["batches"]
+                for b in group_data["batches"]
             )
 
             html_content = f"""
             <html>
             <body>
-                <p>Dear {tester_data['name']},</p>
+                <p>Dear team,</p>
                 <p>This is a reminder for the following batches that are approaching their maturity date:</p>
                 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
                     <tr>
