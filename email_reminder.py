@@ -103,7 +103,7 @@ def send_emails(grouped, admin_emails, email_address, email_password):
             msg = EmailMessage()
             msg['Subject'] = "Upcoming Batch Maturity Reminders"
             msg['From'] = email_address
-            msg['To'] = ', '.join(to_emails)
+            msg['To'] = ', '.join(email for email in to_emails if email)
             msg['Cc'] = ', '.join(admin_emails)
 
             # Build HTML table
