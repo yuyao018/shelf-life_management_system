@@ -20,19 +20,31 @@ def execute_script(command):
         result = subprocess.run(
             command,
             capture_output=True,
-            text=True
+            text=True,
+            check=False # Do not raise CalledProcessError automatically
         )
-        return {
-            "status": "success",
-            "output": result.stdout
-        }, 200
-    except subprocess.CalledProcessError as e:
-        error_message = f"Error executing script: {e}"
+        # Check return code manually for success/error if check=False
+        if result.returncode == 0:
+            return {
+                "status": "success",
+                "output": result.stdout.strip() # Strip whitespace for cleaner output
+            }, 200
+        else:
+            # If script exits with non-zero code, it's an error from the script itself
+            error_message = f"Script execution failed with exit code {result.returncode}."
+            print(f"{error_message} Stderr: {result.stderr.strip()}", file=sys.stderr)
+            return {
+                "status": "error",
+                "message": error_message,
+                "stderr": result.stderr.strip(),
+                "stdout": result.stdout.strip() # Include stdout for debugging
+            }, 500
+    except Exception as e: # Catch broader exceptions during subprocess creation/execution
+        error_message = f"Error running subprocess: {e}"
         print(error_message, file=sys.stderr)  # Log error to Flask app's stderr
         return {
             "status": "error",
-            "message": error_message,
-            "stderr": e.stderr
+            "message": error_message
         }, 500
 
 # === Script Handlers ===
@@ -53,13 +65,16 @@ app = Flask(__name__)
 def get_barcode_image(): # Serves a barcode image file based on the batch ID passed as a query parameter.
     batch_id = request.args.get("batch_id", "")
     if not batch_id:
-        return "Missing 'batch_id' parameter", 400
+        # Changed to jsonify for consistent API error responses
+        return jsonify({"status": "error", "message": "Missing 'batch_id' parameter"}), 400
 
     image_filename = f"{batch_id}_barcode.png"
+    # Ensure this path is correct and accessible for your system
     image_path = os.path.join(BARCODE_IMAGE_FOLDER, image_filename)
 
     if not os.path.exists(image_path):
-        return abort(404, description="Barcode image not found")
+        # Changed to jsonify for consistent API error responses
+        return jsonify({"status": "error", "message": "Barcode image not found"}), 404
 
     return send_file(image_path, mimetype='image/png')
 
@@ -77,12 +92,23 @@ def run_script(): # Triggers script execution based on 'script' and optional 'ba
         return jsonify(*handle_edit_csv(batch_id))
     elif script_name == "email_reminder":
         return jsonify(*handle_email_reminder())
+    elif script_name is None: # Added this block to handle missing 'script' parameter
+        return jsonify({
+            "status": "success",
+            "output": "Welcome to the Shelf Life Management System API. Please specify a 'script' parameter (e.g., database_to_csv, edit_csv, email_reminder) for POST requests, or a 'batch_id' for GET requests."
+        }), 200
+    else: # Added this block to handle unrecognized 'script' parameters
+        return jsonify({
+            "status": "error",
+            "message": f"Unknown script: '{script_name}'. Valid scripts are 'database_to_csv', 'edit_csv', 'email_reminder'."
+        }), 400
 
 # === Email Scheduler ===
 def trigger_email_reminder():
     try:
-        result, status = handle_email_reminder()
-        print("Triggered email reminder:", result)
+        # handle_email_reminder returns a tuple (dict, status_code). We only need the dict here.
+        result_dict, _ = handle_email_reminder()
+        print("Triggered email reminder:", result_dict.get('output', result_dict.get('message', 'No specific output message.')))
     except Exception as e:
         print("Failed to trigger email reminder:", e)
 
